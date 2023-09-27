@@ -1,0 +1,97 @@
+.cartitem {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5rem 1rem;
+  border-bottom: 2px solid #984525;
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-size: 2.3rem;
+      color: rgb(67, 67, 67);
+    }
+
+    &__below {
+      display: flex;
+      align-items: center;
+      margin-top: 1.5rem;
+
+      p {
+        color: #8a2b06;
+        font-weight: 700;
+        font-size: 1.653rem;
+      }
+
+      h4 {
+        margin-left: 3.5rem;
+        font-size: 1.6rem;
+        border: 1px solid rgb(157, 157, 157);
+        padding: 0.3rem 1.3rem;
+        border-radius: 7px;
+        color: rgb(67, 67, 67);
+
+        span {
+          font-size: 1.4rem;
+          margin-right: 0.3rem;
+        }
+      }
+    }
+  }
+
+  &__sub {
+    display: flex;
+    align-items: center;
+    button {
+      font: inherit;
+      font-weight: inherit;
+      font-size: 2.3rem;
+      font-weight: bold;
+      color: #8a2b06;
+      border: 1px solid #8a2b06;
+      width: 5rem;
+      // height: 3rem;
+      text-align: center;
+      border-radius: 6px;
+      background-color: transparent;
+      cursor: pointer;
+      margin-left: 1rem;
+      margin: 0.25rem;
+    }
+  }
+}
+
+.order {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  font-size: 2rem;
+
+  &__button {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      cursor: pointer;
+      margin: 2rem 0 1rem 0;
+      padding: 1rem 3rem;
+      border-radius: 25px;
+      margin-left: 1rem;
+      border: 1px solid;
+      font-size: 1.75rem;
+    }
+
+    &__two {
+      background-color: white;
+      border-color: #8a2b06;
+      color: #8a2b06;
+    }
+
+    &__one {
+      background-color: #8a2b06;
+      border-color: #5a1a01;
+      color: white;
+    }
+  }
+}
