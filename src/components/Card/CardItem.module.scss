@@ -1,0 +1,31 @@
+.carditemLayout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0rem;
+    width: 95%;
+    margin: 0 auto;;
+    border-bottom: 1px solid rgb(205, 205, 205);
+}
+
+.carditem {
+    color: black;
+    font-size: 1.75rem;
+    text-align: left;
+
+    h3 {
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-style: italic;
+        margin-bottom: 1rem;
+    }
+
+    span {
+        color: #ad5503;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+}
