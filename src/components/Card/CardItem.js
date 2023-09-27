@@ -5,9 +5,9 @@ import classes from './CardItem.module.scss';
 import Form from '../Form/CardForm';
 
 const CardItem = (props) => {
-  const name = 'Sushi';
-  const description = 'Finest Fish and Veggies';
-  const price = 22.99;  
+  const name = props.name;
+  const description = props.description;
+  const price = props.price;  
 
   return (
     <div className={classes.carditemLayout}>
