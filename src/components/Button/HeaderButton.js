@@ -4,9 +4,10 @@ import classes from './HeaderButton.module.scss';
 
 import CartIcon from '../../assets/CartIcon'
 
-const HeaderButton = () => {
+const HeaderButton = (props) => {
+
   return (
-    <button className={classes.HeaderButton}>
+    <button onClick={props.toggleCart} className={classes.HeaderButton}>
         <div className={classes.HeaderButton__icon}>
             <CartIcon />
         </div>
