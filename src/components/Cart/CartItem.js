@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import classes from "./CartItem.module.scss";
 
-//import cartContext from "../../store/CartContext";
+import cartContext from "../../store/CartContext";
 
 const CartItem = (props) => {
-  //const cartCtx = useContext(cartContext);
+  const cartCtx = useContext(cartContext);
   const name = props.name;
   const price = props.price;
   const amount = props.quantity;
@@ -42,6 +42,16 @@ const CartItem = (props) => {
   //   </Fragment>
   // );
 
+  const addHandler = () => {
+    const item = {name: name, price: price, quantity: 1};
+    cartCtx.addItem(item)
+  }
+
+  const removeHandler = () => {
+    const item = {name: name, price: price, quantity: 1};
+    cartCtx.removeItem(item)
+  }
+
   return (
     <div className={classes.cartitem}>
       <div className={classes.cartitem__main}>
@@ -55,8 +65,8 @@ const CartItem = (props) => {
         </div>
       </div>
       <div className={classes.cartitem__sub}>
-        <button>-</button>
-        <button>+</button>
+        <button onClick={removeHandler}>-</button>
+        <button onClick={addHandler}>+</button>
       </div>
     </div>
   );

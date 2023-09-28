@@ -27,10 +27,11 @@ const HeaderButton = (props) => {
         setIsButtonClicked(
           `${classes.HeaderButton} ${false ? `${classes.animate}` : ""}`
         );
+        clearTimeout(timeoutId);
       }, 300); // Adjust the delay to match the animation duration
 
       // Cleanup the timeout to avoid memory leaks
-      return () => clearTimeout(timeoutId);
+      //return () => clearTimeout(timeoutId);
     }
   }, [quantity]);
 
