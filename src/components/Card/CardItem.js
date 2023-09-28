@@ -16,7 +16,7 @@ const CardItem = (props) => {
             <p>{description}</p>
             <span>${price}</span>
         </div>
-        <Form />
+        <Form name={name} price={price} />
     </div>
   );
 }

@@ -1,8 +1,15 @@
+/* Hide the default scrollbar */
 .cart {
-  top: 20%;
-  //left: 30%;
+  top: 15%;
+  max-height: 55rem;
+  overflow-y: scroll; /* Display the scrollbar, but it will be invisible */
   left: calc(50% - 30rem);
-  //transform: translate(-50%, -50%);
-  width: 60rem;
+  width: 63rem;
   background-color: white;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.cart::-webkit-scrollbar {
+  display: none;
 }

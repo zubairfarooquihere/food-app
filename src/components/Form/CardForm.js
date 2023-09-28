@@ -1,12 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import classes from "./CardForm.module.scss";
 
-const CardForm = () => {
+import CartContext from "../../store/CartContext";
+
+const CardForm = (props) => {
+  const cartCtx = useContext(CartContext);
   const [amount, setAmount] = useState(1);
 
+  const addItem = () => {
+    const item = { name: props.name, price: props.price, quantity: amount };
+    cartCtx.addItem(item);
+  };
+
   const changeHandler = (event) => {
-    setAmount(event.target.value);
+    const newValue = parseInt(event.target.value, 10); // Use 10 as the base for parsing integers
+    setAmount(newValue);
   };
 
   return (
@@ -21,7 +30,7 @@ const CardForm = () => {
         step={1}
         value={amount}
       />
-      <button>+ Add</button>
+      <button onClick={addItem}>+ Add</button>
     </div>
   );
 };

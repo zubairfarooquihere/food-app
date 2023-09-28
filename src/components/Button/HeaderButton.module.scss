@@ -10,6 +10,7 @@
   border-radius: 15rem;
   outline: none;
   transition: all .1s;
+  //animation: scaleAnimation 0.3s;
 
   &__icon {
     width: 2rem;
@@ -40,4 +41,23 @@
       }
   }
   
+}
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1); /* Start at the normal size */
+  }
+  25% {
+    transform: scale(1.1); /* Scale up to 120% size */
+  }
+  75% {
+    transform: scale(0.9); /* Scale up to 120% size */
+  }
+  100% {
+    transform: scale(1); /* Return to normal size */
+  }
+}
+
+.animate {
+  animation: scaleAnimation 0.3s ease-out;
 }

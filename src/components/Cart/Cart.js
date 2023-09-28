@@ -9,7 +9,7 @@ const Cart = (props) => {
 
   return (
     <Modal className={classes.cart} onClose={props.toggleCart} >
-        <CartList />
+        <CartList toggleCart={props.toggleCart} />
     </Modal>
   );
 };
