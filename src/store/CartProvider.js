@@ -10,7 +10,7 @@ const defaultValue = {
 
 const cartReducer = (state, action) => {
   if (action.type === "ADD") {
-    const updatedTotalAmount = state.totalAmt + action.item.price;
+    const updatedTotalAmount = state.totalAmt + (action.item.quantity * action.item.price);
     let updatedItems;
     const existingItemIndex = state.item.findIndex(
       (item) => item.name === action.item.name
@@ -34,11 +34,17 @@ const cartReducer = (state, action) => {
     if(updatedItems[existingItemIndex].quantity === 0) {
       updatedItems.splice(existingItemIndex, 1);
     }
-    const updatedTotalAmount = state.totalAmt - action.item.price;
+    const updatedTotalAmount = state.totalAmt - (action.item.price * action.item.quantity);
     return {
       item: updatedItems,
       totalAmt: Math.max(updatedTotalAmount, 0),
     };
+  } else if (action.type === "CLEAR") {
+
+    return {
+      item: [],
+      totalAmt: 0,
+    }
   }
 
   return defaultValue;
@@ -55,8 +61,8 @@ const Provider = (props) => {
     dispatchCartAction({ type: "REMOVE", item: item });
   };
 
-  const clearItemToCartHandler = (item) => {
-    //dispatchCartAction({type: 'ADD', item: item});
+  const clearItemToCartHandler = () => {
+    dispatchCartAction({type: 'CLEAR'});
   };
 
   const cartValue = {
